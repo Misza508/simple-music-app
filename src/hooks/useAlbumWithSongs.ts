@@ -19,7 +19,7 @@ export function useAlbumWithSongs(albumId: string) {
     data,
     isLoading: songsIsLoading,
     isError: songsIsError,
-  } = useSongs({ enabled: isFetched });
+  } = useSongs({ enabled: isFetched && !albumIsError });
 
   const songs = data?.filter((song) => song.albumId === albumId);
 
